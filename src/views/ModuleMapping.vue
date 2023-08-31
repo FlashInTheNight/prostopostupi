@@ -1,6 +1,6 @@
 <template>
-    <div class="container mx-auto">
-        <ul class="steps w-full mt-5">
+    <div class="container p-4 mx-auto">
+        <ul class="steps w-full mt-5 text-sm">
             <li
                 class="step"
                 :class="{
@@ -35,9 +35,8 @@
                         @input="checkMinScore"
                         v-model="minScore"
                         type="number"
-                        placeholder="Минимальная сумма проходного балла должна быть
-                            равна 118"
-                        class="input input-bordered input-primary w-full max-w-xs" />
+                        placeholder="Минимальная сумма 118 баллов"
+                        class="input input-bordered input-primary w-full max-w-xs placeholder:text-sm" />
                     <label
                         v-show="checkedMinScoreField"
                         id="error"
@@ -105,7 +104,7 @@
             </div>
             <button
                 @click="getNextStep"
-                class="btn btn-accent flex ml-auto"
+                class="btn btn-accent flex ml-auto mt-5"
                 :class="{
                   'bg-error': checkedMinScoreField || checkedCityField || checkedProfileField
                 }">
