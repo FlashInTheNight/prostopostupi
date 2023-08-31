@@ -104,52 +104,47 @@
             </div>
             <button
                 @click="getNextStep"
-                class="btn btn-accent flex ml-auto mt-5"
+                class="btn btn-accent flex text-xs mx-auto mt-5"
                 :class="{
                   'bg-error': checkedMinScoreField || checkedCityField || checkedProfileField
                 }">
                 Следующий шаг
             </button>
         </div>
-        <div id="step-2" v-if="currentStep === 1">
-            <div class="flex flex-wrap gap-6">
+        <div id="step-2" class="flex flex-col gap-y-4 mt-5 text-center" v-if="currentStep === 1">
+          <p class="text-sm text-center italic ">Кликните на желаемые программы обучения</p>
+            <div id="Directions list" class="flex flex-wrap gap-y-2 md:gap-2 md:justify-center">
                 <div
                     v-for="item in currentDirections"
-                    class="form-control"
+                    class="form-control w-full md:w-60 md:h-40"
                     :key="item">
                     <label
-                        class="label cursor-pointer w-56 h-56 bg-accent"
+                        class="label justify-center cursor-pointer bg-accent rounded-md flex-1"
                         :class="{
                             'bg-red-500': checkedDirectons.includes(item),
                         }">
-                        <div>
-                            <span>{{ item }}</span>
-                        </div>
+                            <span class="break-words">{{ item }}</span>
                         <input
                             type="checkbox"
                             :value="item"
                             v-model="checkedDirectons"
-                            class="checkbox checkbox-primary invisible" />
+                            class="checkbox checkbox-primary invisible w-1 h-1" />
                     </label>
                 </div>
             </div>
             <div class="flex justify-between">
                 <button
                     @click="getStepBack"
-                    class="btn btn-active btn-secondary">
-                    Шаг Назад
+                    class="btn btn-active btn-secondary text-xs">
+                    Назад
                 </button>
                 <button
                     :disabled="checkedDirectons.length === 0"
                     @click="getResults"
-                    class="btn btn-active btn-secondary">
+                    class="btn btn-active btn-secondary text-xs">
                     Показать результаты
                 </button>
             </div>
-            {{ checkedDirectons }}
-            <hr />
-            <hr />
-            {{ stepThreeResults }}
         </div>
         <div id="step-3" v-if="currentStep === 2">
             <div class="flex flex-wrap gap-6">
