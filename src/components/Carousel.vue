@@ -1,61 +1,24 @@
 <template>
-    <swiper
-        :spaceBetween="30"
-        :effect="'fade'"
-        :navigation="false"
-        :pagination="{
-            clickable: true,
-        }"
-        :autoplay="{
-            delay: 2500,
-            disableOnInteraction: false,
-        }"
-        :modules="modules"
-        class="mySwiper">
-        <swiper-slide
-            ><img
-                class="w-full"
-                src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide
-        ><swiper-slide
-            ><img
-                class="w-full"
-                src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide
-        ><swiper-slide
-            ><img
-                class="w-full"
-                src="https://swiperjs.com/demos/images/nature-3.jpg" /></swiper-slide
-        ><swiper-slide
-            ><img
-                class="w-full"
-                src="https://swiperjs.com/demos/images/nature-4.jpg"
-        /></swiper-slide>
-    </swiper>
+  <div class="w-full carousel rounded-box bg-orange-300">
+    <div class="carousel-item w-full">
+      <img src="../assets/images/stock/carousel/pic-1.jpg"  alt="Tailwind CSS Carousel component" />
+    </div>
+    <div class="carousel-item w-full">
+      <img src="../assets/images/stock/carousel/pic-1.jpg"  alt="Tailwind CSS Carousel component" />
+    </div>
+    <div class="carousel-item w-full">
+      <img src="../assets/images/stock/carousel/pic-1.jpg"  alt="Tailwind CSS Carousel component" />
+    </div>
+    <div class="carousel-item w-full">
+      <img src="../assets/images/stock/carousel/pic-1.jpg"  alt="Tailwind CSS Carousel component" />
+    </div>
+    <div class="carousel-item w-full">
+      <img src="../assets/images/stock/carousel/pic-1.jpg"  alt="Tailwind CSS Carousel component" />
+    </div>
+  </div>
 </template>
-<script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
 
-// Import Swiper styles
-import "swiper/css";
-
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-// import "./style.css";
-
-// import required modules
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        return {
-            modules: [Autoplay, EffectFade, Navigation, Pagination],
-        };
-    },
-};
+<script setup lang="ts">
 </script>
+
+<style scoped></style>

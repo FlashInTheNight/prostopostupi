@@ -1,16 +1,15 @@
 <template>
     <div>
-        <h1 class="text-sm font-bold">{{ currentWord }}<i class="text-red-500">|</i></h1>
+        <h1 class="text-xl md:text-3xl font-bold">{{ currentWord }}<i>|</i></h1>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted } from "vue";
+import { ref, reactive } from "vue";
 
 const words = reactive([
-    "Hello, World!",
-    "Welcome to my website!",
-    "This is a typewriter effect.",
+    "В любой город",
+    "На любую специальность",
 ]);
 let i = ref(0);
 let j = ref(0);
@@ -36,7 +35,7 @@ function type() {
             isDeleting.value = true;
         }
     }
-    setTimeout(type, 200);
+    setTimeout(type, 100);
 }
 
 type();
