@@ -19,6 +19,12 @@ const router = createRouter({
             name: "ModuleMapping",
             component: () => import("../views/ModuleMapping.vue"),
         },
+        {
+            path: "/UniversityInfo/:name",
+            name: "UniversityInfo",
+            component: () => import("../views/UniversityInfo.vue"),
+            props: true,
+        },
     ],
 });
 

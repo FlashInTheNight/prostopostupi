@@ -64,7 +64,7 @@
             </div>
           </div>
           <div class="card-actions justify-center mt-4">
-            <button class="btn btn-primary text-xs">Подробная информация</button>
+            <router-link :to="`/universityInfo/${vuz.name}`" :vuz="vuz" class="btn btn-primary text-xs">Подробная информация</router-link>
           </div>
         </div>
       </div>
@@ -87,6 +87,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from "vue";
 import universities from "../data/universities.js";
+import { RouterLink } from "vue-router";
 
 // data
 const btnToggle = ref(true);
