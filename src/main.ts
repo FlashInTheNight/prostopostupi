@@ -21,9 +21,18 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
-import { faUserSecret, faCircleExclamation, faUniversalAccess, faComments, faSliders } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, 
+  faCircleExclamation, 
+  faUniversalAccess, 
+  faComments, 
+  faSliders, 
+  faHouseChimney,
+  faStar,
+  faGlobe,
+   } from '@fortawesome/free-solid-svg-icons';
+import { faVk, faTelegram } from '@fortawesome/free-brands-svg-icons'
 /* add icons to the library */
-library.add(faUserSecret, faCircleExclamation, faUniversalAccess, faComments, faSliders)
+library.add(faUserSecret, faCircleExclamation, faUniversalAccess, faComments, faSliders, faHouseChimney, faStar, faGlobe, faVk, faTelegram)
 
 
 createApp(App).use(router).use(Vue3Marquee).component('font-awesome-icon', FontAwesomeIcon).mount('#app')

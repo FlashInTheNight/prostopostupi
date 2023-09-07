@@ -1,15 +1,17 @@
 <template>
-  <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
-    centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
+  <swiper-container class="mySwiper" navigation="true">
+    <swiper-slide><img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
+        alt="изображение университета"></swiper-slide>
+    <swiper-slide><img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+        alt="изображение университета">></swiper-slide>
+    <swiper-slide><img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+        alt="изображение университета">></swiper-slide>
+    <swiper-slide><img src="https://mdbcdn.b-cdn.net/img/new/slides/044.webp"
+        alt="изображение университета">></swiper-slide>
   </swiper-container>
 </template>
 
 <script setup lang="ts">
 </script>
 
-<style scoped></style>
+<style></style>
