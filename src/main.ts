@@ -6,6 +6,7 @@ import router from './router'
 import { register } from 'swiper/element/bundle';
 import Vue3Marquee from 'vue3-marquee'
 
+
 // swiper
 register();
 
@@ -35,4 +36,4 @@ import { faVk, faTelegram } from '@fortawesome/free-brands-svg-icons'
 library.add(faUserSecret, faCircleExclamation, faUniversalAccess, faComments, faSliders, faHouseChimney, faStar, faGlobe, faVk, faTelegram)
 
 
-createApp(App).use(router).use(Vue3Marquee).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+createApp(App).use(router).use(Vue3Marquee).component('font-awesome-icon', FontAwesomeIcon).mount('#app');

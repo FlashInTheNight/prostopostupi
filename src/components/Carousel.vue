@@ -1,12 +1,12 @@
 <template>
   <swiper-container class="mySwiper" navigation="true">
-    <swiper-slide><img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
+    <swiper-slide><img src="../assets/images/carousel/caro-1.jpg"
         alt="изображение университета"></swiper-slide>
-    <swiper-slide><img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+    <swiper-slide><img src="../assets/images/carousel/caro-2.jpg"
         alt="изображение университета">></swiper-slide>
-    <swiper-slide><img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+    <swiper-slide><img src="../assets/images/carousel/caro-3.jpg"
         alt="изображение университета">></swiper-slide>
-    <swiper-slide><img src="https://mdbcdn.b-cdn.net/img/new/slides/044.webp"
+    <swiper-slide><img src="../assets/images/carousel/caro-4.jpg"
         alt="изображение университета">></swiper-slide>
   </swiper-container>
 </template>
