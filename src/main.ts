@@ -30,10 +30,11 @@ import { faUserSecret,
   faHouseChimney,
   faStar,
   faGlobe,
+  faHouse,
    } from '@fortawesome/free-solid-svg-icons';
 import { faVk, faTelegram } from '@fortawesome/free-brands-svg-icons'
 /* add icons to the library */
-library.add(faUserSecret, faCircleExclamation, faUniversalAccess, faComments, faSliders, faHouseChimney, faStar, faGlobe, faVk, faTelegram)
+library.add(faUserSecret, faCircleExclamation, faUniversalAccess, faComments, faSliders, faHouseChimney, faStar, faGlobe, faVk, faTelegram, faHouse)
 
 
 createApp(App).use(router).use(Vue3Marquee).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
