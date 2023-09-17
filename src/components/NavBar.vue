@@ -9,13 +9,13 @@
         <RouterLink class="hover:underline active:text-slate-400" to="/">Главная</RouterLink>
       </li>
       <li>
-        <RouterLink class="hover:underline active:text-slate-400"  to="/universities">Список университетов</RouterLink>
+        <RouterLink class="hover:underline active:text-slate-400" to="/universities">Список университетов</RouterLink>
       </li>
       <li>
         <RouterLink class="hover:underline active:text-slate-400" to="/modulemapping">Подобрать университет</RouterLink>
       </li>
     </ul>
-    <div class="form-control flex-1 flex-row gap-x-3 xl:flex-none xl:ml-auto">
+    <div class="form-control flex-1 flex-row gap-x-3 xl:flex-none xl:ml-auto relative">
       <label class="swap swap-rotate hidden xl:inline-grid">
         <!-- this hidden checkbox controls the state -->
         <input type="checkbox" />
@@ -30,7 +30,25 @@
             d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
         </svg>
       </label>
-      <input class="input input-bordered w-[95%] xl:w-[23rem] 2xl:w-[36rem] max-w-2xl" type="text" placeholder="Найти университет" />
+      <input class="input input-bordered w-[95%] xl:w-[23rem] 2xl:w-[36rem] max-w-2xl" type="text"
+        placeholder="Найти университет" v-model="searchItem" />
+      <button @click="clearSearchBar()" v-if="searchItem" class="btn btn-square btn-outline absolute right-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div v-if="searchItem"
+        class="absolute bg-base-100 z-30 top-[70px] left-[68px] p-2.5 rounded w-[36rem] max-h-80 overflow-y-auto">
+        <div v-if="items.length">
+          <template v-for="item in items">
+            <RouterLink @click="clearSearchBar()" class="px-1.5 py-2.5 block border mb-2.5 text-sm rounded last:mb-0"
+              :to="`/universityInfo/${item.name}`">{{ item.name }}</RouterLink>
+          </template>
+        </div>
+        <div v-else>
+          <p>НИХУЯ НЕТ</p>
+        </div>
+      </div>
     </div>
     <div class="flex-none gap-2 xl:hidden">
       <div class="dropdown dropdown-end relative">
@@ -95,53 +113,25 @@
       </div>
     </div>
   </div>
-  <!-- <div class="navbar bg-base-300 flex-wrap min-h-[auto]">
-    <div class="flex-1">
-      <font-awesome-icon class="w-8 h-8 mr-10" icon="fa-solid fa-user-secret" />
-      <ul class="flex flex-wrap gap-4">
-        <li>
-          <RouterLink to="/">Главная</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/universities">Список университетов</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/modulemapping">Подобрать мой универ</RouterLink>
-        </li>
-      </ul>
-    </div>
-    <div class="flex-none gap-2">
-      <div class="form-control">
-        <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-      </div>
-      <div class="dropdown dropdown-end">
-        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
-            <img src="../assets/images/stock/cat.png" />
-          </div>
-        </label>
-        <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-          <li>
-            <a class="justify-between">
-              Profile
-              <span class="badge">New</span>
-            </a>
-          </li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
 </template>
 
 <script setup>
 import { RouterLink } from "vue-router";
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import universities from "../data/universities.js";
 
-const toggler = ref(false)
+const toggler = ref(false);
+const searchItem = ref("");
+const items = ref(null)
+
+watch(searchItem, (newSearchItem) => {
+  if (newSearchItem) {
+      items.value = [...universities.filter(({ name }) => name.includes(newSearchItem))]
+  }
+})
 
 const toggleMenu = () => toggler.value = !toggler.value;
+const clearSearchBar = () => searchItem.value = "";
 
 </script>
 
