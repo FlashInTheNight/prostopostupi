@@ -22,7 +22,7 @@
     <section class="md:mt-20 -mt-14 lg:mt-0">
       <h2 class="text-center px-2 uppercase font-bold text-xl 2xl:text-3xl mb-7">Топ недели</h2>
       <Vue3Marquee class="bg-black" :pauseOnHover="true" :duration="50">
-          <router-link :to="`/universityInfo/${pic.name}`" v-for="pic in marqueePics" class="card w-56 2xl:w-80 bg-base-100 shadow-xl my-7 2xl:my-12 mx-3 lg:mx-6 image-full lg:before:h-[14rem] before:hover:opacity-90 " :key="pic.name">
+          <router-link :to="`/universityInfo/${pic.name}`" v-for="pic in marqueePics" class="card w-56 2xl:w-80 bg-base-100 shadow-xl my-7 2xl:my-12 mx-3 lg:mx-6 2xl:mx-16 image-full lg:before:h-[14rem] before:hover:opacity-90 " :key="pic.name">
             <figure><img :src="getImageUrl(pic.url)" :alt="pic.alt" /></figure>
             <div class="card-body justify-center p-4">
               <h2 class=" card-title justify-center text-center text-lg 2xl:text-2xl">{{ pic.name }}</h2>

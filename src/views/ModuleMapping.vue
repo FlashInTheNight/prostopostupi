@@ -1,5 +1,6 @@
 <template>
   <div class="container p-4 mx-auto">
+    <h2 class="uppercase text-xl text-center mb-7 pl-7">Подбор университета</h2>
     <ul class="steps w-full mt-5 text-sm">
       <li class="step" :class="{
         'step-accent': currentStep >= 0,

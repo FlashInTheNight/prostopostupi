@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto py-4">
-    <h2 class="uppercase text-xl mb-7 pl-7">Список университетов</h2>
+    <h2 class="uppercase text-xl text-center mb-7 pl-7">Список университетов</h2>
     <!-- divider -->
     <div class="flex flex-col w-full">
       <!-- first content -->
@@ -30,13 +30,15 @@
     <div class="divider"></div>
     <!-- tabs -->
     <div class="tabs justify-center">
-      <button @click="getAllData" class="tab tab-lifted btn-neutral focus:text-accent-content" :class="{
+      <button @click="getAllData" class="tab tab-lifted btn-neutral active:text-base-200  focus:text-accent-content" :class="{
         'tab-active': counter === -1,
+        'text-accent-content': counter === -1
       }">
         Все Университеты
       </button>
-      <button v-for="(city, index) in getCurrentTabs" class="tab tab-lifted focus:text-accent-content btn-neutral" :class="{
+      <button v-for="(city, index) in getCurrentTabs" class="tab tab-lifted  focus:text-accent-content active:text-base-200  btn-neutral" :class="{
         'tab-active': index === counter,
+        'text-accent-content': index === counter
       }" :key="city" @click="changeTab(index)">
         {{ city }}
       </button>
@@ -45,12 +47,13 @@
     <!-- Cards -->
     <div id="cards" class="mt-4 flex flex-wrap gap-4 md:gap-2 justify-center">
       <div id="singleCard" v-for="(vuz, index) in pagCards"
-        class="card border border-bg-base-100 card-compact w-[15rem] 2xl:w-72  bg-base-100 shadow-xl mt-4 sm:mt-0" :key="vuz">
-        <figure>
-          <img :src="`https://loremflickr.com/640/360?lock=${index}`" alt="Фотография университета" />
-        </figure>
+        class="card border border-bg-base-100 card-compact w-[15rem] 2xl:w-72  bg-base-100 shadow-xl mt-4 sm:mt-0"
+        :key="vuz">
+        <!-- <figure class="overflow-hidden">
+          <img src="https://fakeimg.pl/380x200/?text=university image">
+        </figure> -->
         <div class="card-body justify-between">
-          <h2 class="card-title">{{ vuz.name }}</h2>
+          <h2 class="card-title text-[1.05rem]">{{ vuz.name }}</h2>
           <div>
             <p>Город: {{ vuz.location }}</p>
             <p>
@@ -64,7 +67,8 @@
             </div>
           </div>
           <div class="card-actions justify-center mt-4">
-            <router-link :to="`/universityInfo/${vuz.name}`" :vuz="vuz" class="btn btn-primary text-xs">Подробная информация</router-link>
+            <router-link :to="`/universityInfo/${vuz.name}`" :vuz="vuz" class="btn btn-primary text-xs">Подробная
+              информация</router-link>
           </div>
         </div>
       </div>
@@ -73,7 +77,8 @@
     <!-- pagination -->
     <div class="join flex flex-wrap justify-center mt-3 mb-3">
       <button v-for="(pag, index) in getAllPaginationBtns" @click="paginatedData(index)"
-        class="join-item btn-sm hover:bg-slate-600 border border-neutral  disabled:bg-neutral disabled:text-white" :disabled="index === pageNumber" :class="{
+        class="join-item btn-sm hover:bg-slate-600 border border-neutral  disabled:bg-neutral disabled:text-white"
+        :disabled="index === pageNumber" :class="{
           'btn-active': index === pageNumber,
         }" :key="pag">
         {{ index + 1 }}
@@ -146,13 +151,17 @@ const getCurrentTabs = computed(() =>
 
 const sortList = () => {
   if (sortToggle.value) {
-    currentCards.value = currentCards.value.sort(
+    let nonRaitingArr = currentCards.value.filter(e => !e["rating"])
+    let RaitingArr = currentCards.value.filter(e => e["rating"]).sort(
       (a, b) => a["rating"] - b["rating"]
     );
+    currentCards.value = [...RaitingArr, ...nonRaitingArr]
   } else {
-    currentCards.value = currentCards.value.sort(
+    let nonRaitingArr = currentCards.value.filter(e => !e["rating"])
+    let RaitingArr = currentCards.value.filter(e => e["rating"]).sort(
       (a, b) => b["rating"] - a["rating"]
     );
+    currentCards.value = [...RaitingArr, ...nonRaitingArr]
   }
   sortToggle.value = !sortToggle.value;
   paginatedData();
