@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="text-xl md:text-3xl font-bold text-accent">{{ currentWord }}<i>|</i></h1>
+        <h1 class="text-xl md:text-3xl font-bold text-accent">{{ currentWord }}<i class="animate-pulse">|</i></h1>
     </div>
 </template>
 
@@ -32,10 +32,10 @@ function type() {
         currentWord.value = currentWord.value.substring(0, j.value);
         j.value = j.value + 1;
         if (j.value > words[i.value].length) {
-            isDeleting.value = true;
+            setTimeout(() => isDeleting.value = true, 1500)
         }
     }
-    setTimeout(type, 100);
+    setTimeout(type, 50);
 }
 
 type();
