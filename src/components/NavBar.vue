@@ -31,14 +31,14 @@
         </svg>
       </label>
       <input class="input input-bordered w-[95%] xl:w-[23rem] 2xl:w-[36rem] max-w-2xl" type="text"
-        placeholder="Найти университет" v-model="searchItem" />
-      <button @click="clearSearchBar()" v-if="searchItem" class="btn btn-square btn-outline absolute right-0">
+        placeholder="Найти университет" v-model.trim="searchItem" />
+      <button @click="clearSearchBar()" v-if="searchItem" class="btn btn-square btn-outline absolute right-[0.7rem] md:right-[1.65rem] lg:right-[2.45rem] xl:right-[0]">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
       <div v-if="searchItem"
-        class="absolute bg-base-100 z-30 top-[70px] left-[68px] p-2.5 rounded w-[36rem] max-h-80 overflow-y-auto">
+        class="absolute bg-base-100 z-20 top-[3rem] md:top-[3.25rem] left-[-3.25rem] xl:left-[3rem] w-[100vw] xl:w-[24rem] 2xl:top-[70px] 2xl:left-[68px] p-2.5 rounded 2xl:w-[36rem] max-h-80 overflow-y-auto">
         <div v-if="items.length">
           <template v-for="item in items">
             <RouterLink @click="clearSearchBar()" class="px-1.5 py-2.5 block border mb-2.5 text-sm rounded last:mb-0"
@@ -46,7 +46,7 @@
           </template>
         </div>
         <div v-else>
-          <p>НИХУЯ НЕТ</p>
+          <p class="italic">Ничего не найдено</p>
         </div>
       </div>
     </div>
@@ -68,7 +68,7 @@
           </svg>
         </label>
         <ul v-show="toggler" tabindex="0"
-          class="mt-3 z-[1] p-2 shadow menu menu-sm absolute right-0 bg-base-100 rounded-box w-52 ">
+          class="mt-3 z-30 p-2 shadow menu menu-sm absolute right-0 bg-base-100 rounded-box w-52 ">
           <li>
             <div class="w-[4.5rem]">
               <img class="rounded-full" src="../assets/images/avatar.jpg" />
@@ -126,7 +126,7 @@ const items = ref(null)
 
 watch(searchItem, (newSearchItem) => {
   if (newSearchItem) {
-      items.value = [...universities.filter(({ name }) => name.includes(newSearchItem))]
+      items.value = [...universities.filter(({ name }) => name.toLowerCase().includes(newSearchItem.toLowerCase()))]
   }
 })
 
