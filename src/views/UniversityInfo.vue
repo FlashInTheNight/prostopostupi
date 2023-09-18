@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto py-3">
-    <h2 class="uppercase mb-3 text-lg ml-2">описание университета</h2>
+    <h2 class="uppercase mb-3 text-lg ml-2 text-center">{{ uniData.name }}</h2>
     <div class="flex flex-wrap-reverse gap-6">
       <div class="rounded-sm h-48 md:h-[22rem] xl:h-[28rem] 2xl:h-[36rem] overflow-hidden">
         <Carousel />
