@@ -20,17 +20,17 @@
       </div>
       <div id="uniInfo" class="w-full px-2 md:px-4 flex flex-col lg:flex-row gap-6 lg:items-center xl:justify-center">
         <ul class="flex flex-col gap-2.5 md:gap-3 xl:basis-1/4 2xl:basis-1/5 xl:justify-center">
-          <li><font-awesome-icon class="text-slate-50" icon="fa-solid fa-house-chimney" /> <span
+          <li><font-awesome-icon class="text-accent-content" icon="fa-solid fa-house-chimney" /> <span
               class="font-semibold mr-1">Город:</span> {{ uniData.location }}
           </li>
-          <li><font-awesome-icon class="text-slate-50" icon="fa-solid fa-star" /> <span
+          <li><font-awesome-icon class="text-accent-content" icon="fa-solid fa-star" /> <span
               class="font-semibold mr-1">Рейтинг:</span> {{ uniData.rating === undefined
                 ? 'Недостаточно данных' : uniData.rating }}</li>
-          <li><font-awesome-icon class="text-slate-50" icon="fa-solid fa-globe" /> <span
+          <li><font-awesome-icon class="text-accent-content" icon="fa-solid fa-globe" /> <span
               class="font-semibold mr-1">Cайт:</span> <a class="link" target="_blank"
               href="https://example.com/">https://example.com/</a></li>
           <li class="flex gap-x-[4px] items-center">
-            <font-awesome-icon class="text-slate-50" icon="fa-solid fa-comments" />
+            <font-awesome-icon class="text-accent-content" icon="fa-solid fa-comments" />
             <span class="font-semibold mr-1">Cоц. сети:</span>
             <div class="inline-flex gap-2">
               <a target="_blank" href="https://vk.com/"><font-awesome-icon class="w-8 h-8 text-[#4C75A3]"

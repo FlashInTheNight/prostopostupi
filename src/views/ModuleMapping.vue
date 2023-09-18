@@ -4,21 +4,21 @@
             <li
                 class="step"
                 :class="{
-                    'step-primary': currentStep >= 0,
+                    'step-accent': currentStep >= 0,
                 }">
                 Вводные данные
             </li>
             <li
                 class="step"
                 :class="{
-                    'step-primary': currentStep >= 1,
+                    'step-accent': currentStep >= 1,
                 }">
                 Выбор направления
             </li>
             <li
                 class="step"
                 :class="{
-                    'step-primary': currentStep === 2,
+                    'step-accent': currentStep === 2,
                 }">
                 Выдача результата
             </li>
@@ -36,7 +36,7 @@
                         v-model="minScore"
                         type="number"
                         placeholder="Минимальная сумма 118 баллов"
-                        class="input input-bordered input-primary w-full max-w-xs placeholder:text-sm" />
+                        class="input input-bordered input-accent-content border-accent-content  w-full max-w-xs placeholder:text-sm" />
                     <label
                         v-show="checkedMinScoreField"
                         id="error"
@@ -55,7 +55,7 @@
                     <select
                         @change="checkCityValue"
                         v-model="city"
-                        class="select select-secondary w-full max-w-xs mx-auto">
+                        class="select border-accent-content select-accent-content w-full max-w-xs mx-auto">
                         <option value="default" disabled selected>
                             Выберите желаемый город
                         </option>
@@ -81,7 +81,7 @@
                     <select
                         @change="checkProfileValue"
                         v-model="profile"
-                        class="select select-secondary w-full max-w-xs mx-auto">
+                        class="select disabled:text-gray-700 border-accent-content select-accent-content w-full max-w-xs mx-auto">
                         <option value="default" disabled selected>
                             Выберите области обучения
                         </option>
@@ -104,7 +104,7 @@
             </div>
             <button
                 @click="getNextStep"
-                class="btn btn-accent flex text-xs mx-auto mt-5"
+                class="btn btn-primary flex text-xs mx-auto mt-5"
                 :class="{
                   'bg-error': checkedMinScoreField || checkedCityField || checkedProfileField
                 }">
@@ -119,9 +119,10 @@
                     class="form-control w-full md:w-60 md:h-40"
                     :key="item">
                     <label
-                        class="label justify-center cursor-pointer bg-accent rounded-md flex-1"
+                        class="label justify-center cursor-pointer text-black bg-accent rounded-md flex-1"
                         :class="{
-                            'bg-red-500': checkedDirectons.includes(item),
+                            'bg-primary': checkedDirectons.includes(item),
+                            'text-white': checkedDirectons.includes(item)
                         }">
                             <span class="break-words">{{ item }}</span>
                         <input
@@ -135,13 +136,13 @@
             <div class="flex justify-between">
                 <button
                     @click="getStepBack"
-                    class="btn btn-active btn-secondary text-xs">
+                    class="btn btn-primary text-xs">
                     Назад
                 </button>
                 <button
                     :disabled="checkedDirectons.length === 0"
                     @click="getResults"
-                    class="btn btn-active btn-secondary text-xs">
+                    class="btn btn-primary text-xs">
                     Показать результаты
                 </button>
             </div>
@@ -163,10 +164,10 @@
                 </div>
             </div>
             <div class="flex justify-between">
-                <button @click="getStepBack" class="btn glass">
+                <button @click="getStepBack" class="btn btn-primary">
                     Шаг назад
                 </button>
-                <button @click="() => (currentStep = 0)" class="btn glass">
+                <button @click="() => (currentStep = 0)" class="btn btn-primary">
                     Вернуться в начало
                 </button>
             </div>

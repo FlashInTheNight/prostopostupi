@@ -5,12 +5,12 @@
       </div>
       <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md flex flex-col gap-y-4">
-          <h1 class="text-3xl md:text-5xl font-bold">Простой сайт для простого поступления</h1>
+          <h1 class="text-3xl md:text-5xl font-bold text-slate-200 ">Простой сайт для простого поступления</h1>
           <TypeWriter />
           <div class="mt-16 flex flex-wrap justify-center gap-4">
-            <RouterLink class="btn btn-primary text-xs w-60 md:w-auto" to="/universities">К списку университетов
+            <RouterLink class="btn btn-neutral glass text-xs w-60 md:w-auto" to="/universities">К списку университетов
             </RouterLink>
-            <RouterLink class="btn btn-primary text-xs w-60 md:w-auto" to="/modulemapping">Подобрать университет
+            <RouterLink class="btn btn-neutral glass text-xs w-60 md:w-auto" to="/modulemapping">Подобрать университет
             </RouterLink>
           </div>
         </div>
@@ -42,22 +42,22 @@
         </p>
         <ul data-aos="flip-right" class="flex gap-3 2xl:gap-11 flex-wrap md:justify-center">
           <li
-            class="bg-accent pl-10 2xl:pl-2.5 md:pl-5 rounded-md shadow w-full md:w-64 2xl:w-56 flex gap-x-3 items-center h-14 2xl:h-16">
+            class="bg-accent text-slate-100 pl-10 2xl:pl-2.5 md:pl-5 rounded-md shadow w-full md:w-64 2xl:w-56 flex gap-x-3 items-center h-14 2xl:h-16">
             <font-awesome-icon class="w-6 h-6" icon="fa-solid fa-circle-exclamation" />
             <p>Универсальный портал</p>
           </li>
           <li
-            class="bg-accent pl-10 2xl:px-2.5 md:pl-5 rounded-md shadow w-full md:w-64 2xl:w-56 flex gap-x-3 items-center h-14 2xl:h-16">
+            class="bg-accent text-slate-100 pl-10 2xl:px-2.5 md:pl-5 rounded-md shadow w-full md:w-64 2xl:w-56 flex gap-x-3 items-center h-14 2xl:h-16">
             <font-awesome-icon class="w-6 h-6" icon="fa-solid fa-sliders" />
             <p>Подбор университета</p>
           </li>
           <li
-            class="bg-accent pl-10 2xl:pl-2.5 md:pl-5 rounded-md shadow w-full md:w-64 2xl:w-56 flex gap-x-3 items-center h-14 2xl:h-16">
+            class="bg-accent text-slate-100 pl-10 2xl:pl-2.5 md:pl-5 rounded-md shadow w-full md:w-64 2xl:w-56 flex gap-x-3 items-center h-14 2xl:h-16">
             <font-awesome-icon class="w-6 h-6" icon="fa-solid fa-comments" />
             <p>Сообщество</p>
           </li>
           <li
-            class="bg-accent pl-10 2xl:pl-2.5 md:pl-5 rounded-md shadow w-full md:w-64 2xl:w-56 flex gap-x-3 items-center h-14 2xl:h-16">
+            class="bg-accent text-slate-100 pl-10 2xl:pl-2.5 md:pl-5 rounded-md shadow w-full md:w-64 2xl:w-56 flex gap-x-3 items-center h-14 2xl:h-16">
             <font-awesome-icon class="w-6 h-6" icon="fa-solid fa-universal-access" />
             <p>Удобно для пользователя</p>
           </li>

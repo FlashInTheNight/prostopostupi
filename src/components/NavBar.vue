@@ -43,7 +43,7 @@
         class="absolute bg-base-100 z-20 top-[3rem] md:top-[3.25rem] left-[-3.25rem] xl:left-[3rem] w-[100vw] xl:w-[24rem] 2xl:top-[70px] 2xl:left-[68px] p-2.5 rounded 2xl:w-[36rem] max-h-80 overflow-y-auto">
         <div v-if="items.length">
           <template v-for="item in items">
-            <RouterLink @click="clearSearchBar()" class="px-1.5 py-2.5 block border mb-2.5 text-sm rounded last:mb-0"
+            <RouterLink @click="clearSearchBar()" class="hover:bg-base-200 px-1.5 py-2.5 block border mb-2.5 text-sm rounded last:mb-0"
               :to="`/universityInfo/${item.name}`">{{ item.name }}</RouterLink>
           </template>
         </div>

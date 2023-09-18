@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="text-xl md:text-3xl font-bold">{{ currentWord }}<i>|</i></h1>
+        <h1 class="text-xl md:text-3xl font-bold text-accent">{{ currentWord }}<i>|</i></h1>
     </div>
 </template>
 
