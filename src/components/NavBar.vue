@@ -117,7 +117,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouterLink } from "vue-router";
 import { ref, watch, onMounted } from 'vue';
 import universities from "../data/universities.js";
@@ -125,11 +125,11 @@ import { themeChange } from 'theme-change'
 
 const toggler = ref(false);
 const searchItem = ref("");
-const items = ref(null)
+const items: any = ref(null)
 
 watch(searchItem, (newSearchItem) => {
   if (newSearchItem) {
-    items.value = [...universities.filter(({ name }) => name.toLowerCase().includes(newSearchItem.toLowerCase()))]
+    items.value = [...universities.filter(({ name }) => name.toLowerCase().includes(newSearchItem.toLowerCase()))] 
   }
 })
 

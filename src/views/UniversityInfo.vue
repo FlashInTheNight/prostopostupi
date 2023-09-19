@@ -57,7 +57,7 @@ import { ref, onMounted } from 'vue'
 const route = useRoute();
 const routeName = route.params.name;
 
-const uniData = universities.filter(e => e.name === routeName)[0];
+const uniData = universities.filter((e: {name: string}) => e.name === routeName)[0];
 
 onMounted(() => window.scrollTo(0,0));
 </script>

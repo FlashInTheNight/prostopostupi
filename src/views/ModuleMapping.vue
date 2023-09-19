@@ -111,9 +111,6 @@
         <div id="singleCard" v-for="(vuz, index) in stepThreeResults"
           class="card border border-bg-base-100 card-compact w-[15rem] 2xl:w-72  bg-base-100 shadow-xl mt-4 sm:mt-0"
           :key="vuz">
-          <figure>
-            <img :src="`https://loremflickr.com/640/360?lock=${index}`" alt="Фотография университета" />
-          </figure>
           <div class="card-body justify-between">
             <h2 class="card-title">{{ vuz.name }}</h2>
             <div>

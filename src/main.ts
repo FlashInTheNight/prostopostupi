@@ -1,10 +1,10 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 import { register } from 'swiper/element/bundle';
-import Vue3Marquee from 'vue3-marquee'
+import Vue3Marquee from 'vue3-marquee';
 
 
 // swiper
